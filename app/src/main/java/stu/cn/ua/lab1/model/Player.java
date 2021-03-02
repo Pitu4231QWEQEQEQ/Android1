@@ -3,6 +3,8 @@ package stu.cn.ua.lab1.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -58,6 +60,13 @@ public class Player implements Parcelable {
         this.birthday = in.readString();
         this.gender = in.readString();
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return this.firstName + " " + this.lastName + " " + this.birthday + " " + this.gender;
+    }
+
     public static final Creator<Player> CREATOR =
             new Creator<Player>() {
                 @Override
